@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/UltraBuuf/512/HULKfist.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.M.C</title>
+</head>
+
+<body>
+
+    <h1>Indice de Massa Corporal</h1>
+
+    <div class="botao">
+    <label for="peso">Peso (KG)</label>
+    <input type="number" id="peso" name="peso">
+    <br>
+
+    <label for="altura">Altura (CM)</label>
+    <input type="number" id="altura" name="altura">
+    <br>
+
+    <br>
+    <button onclick="calcularImc()">Calcular IMC</button>
+    <br>
+    <br>
+</div>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    <script>
+        function calcularImc() {
+            const peso = window.document.getElementById("peso").value;
+            const altura = window.document.getElementById("altura").value;
+            const imc = peso / (altura**2);
+            document.getElementById("resultado").textContent = imc.toFixed(2)
+        }
+
+        let tituloDinamico = document.title;
+        window.addEventListener("blur", ()=> {
+            document.title = "HULK ESMAGAAA!!!! "
+        })
+        window.addEventListener("focus", ()=> {
+            document.title = tituloDinamico
+        })
+
+    </script>
+
+    <footer>
+        <p>Feito por Davi dos santos - <span>Gmail: davisantos2577@gmail.com</span></p>
+    </footer>
+
+</body>
+
+</html>
